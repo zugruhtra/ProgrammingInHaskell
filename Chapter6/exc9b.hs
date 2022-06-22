@@ -3,20 +3,17 @@
 
 -- Step 2: enumerate the cases
 -- take' 0 xs 
--- take' n [] 
 -- take' n (x:xs)
 
 -- Step 3: define the simple cases
--- take' 0 xs = xs
--- take' n [] = []
+-- take' 0 xs = []
 
 -- Step 4: define the other cases
--- take' n (x:xs) = [x] ++ take' (n-1) xs
+-- take' n (x:xs) = x : take' (n-1) xs
 
 -- Step 5: generalise and simplify
--- take' _ [] = []
+-- take' 0 _ = []
 
 take' :: Int -> [a] -> [a]
-take' 0 xs = xs
-take' _ [] = []
-take' n (x:xs) = [x] ++ take' (n-1) xs
+take' 0 _ = []
+take' n (x:xs) = x : take' (n-1) xs
